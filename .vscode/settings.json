@@ -1,0 +1,9 @@
+{
+    "terminal.integrated.profiles.windows": {
+  "OSS CAD Suite": {
+    "path": "C:\\Windows\\System32\\cmd.exe",
+    "args": ["/k", "C:\\oss-cad-suite\\environment.bat"]
+  }
+},
+"terminal.integrated.defaultProfile.windows": "OSS CAD Suite"
+}
