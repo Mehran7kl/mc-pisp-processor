@@ -4,10 +4,10 @@ module alu_control (
     output reg [3:0] op
 );
     always @(*) begin
-        if(~|alu_op) begin
+        if(alu_op===2'b00) begin
             op <= 4'b0010;
         end
-        else if(~alu_op[0]) begin
+        else if(alu_op===2'b01) begin
             op <= 4'b0110;
         end
         else begin

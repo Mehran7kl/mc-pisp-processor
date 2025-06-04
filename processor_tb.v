@@ -8,12 +8,12 @@ module processor_tb;
         $dumpfile("wave.vcd");   // Output waveform file
         $dumpvars(0, processor_tb);    // Dump all variables in the testbench
         
-        mips.imem.mem.mem[0]= 32'h20080000;
-        mips.imem.mem.mem[1]= 32'h21080001;
-        mips.imem.mem.mem[2]= 32'h1108FFFE;
+        mips.dmem.mem[0]= 32'h20080000;
+        mips.dmem.mem[1]= 32'h21080001;
+        mips.dmem.mem[2]= 32'h1108FFFE;
         
         #2;
-        #20 $finish;
+        #100 $finish;
 
     end
 endmodule
