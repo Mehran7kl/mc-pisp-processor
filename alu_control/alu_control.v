@@ -11,13 +11,16 @@ module alu_control (
             op <= 4'b0110;
         end
         else begin
-            case (funct[3:0])
-                4'b0000: op <= 4'b0010;
-                4'b0010: op <= 4'b0110;
-                4'b0100: op <= 4'b0000;
-                4'b1010: op <= 4'b0111;  
+            case (funct)
+                6'b000_000: op <= 4'b1101; //sll
+                6'b100_000: op <= 4'b0010; //add
+                6'b100_010: op <= 4'b0110; //sub
+                6'b101_010: op <= 4'b0111; //slt
+                6'b100_100: op <= 4'b0000; //and
+                6'b100_101: op <= 4'b0001; //or
+                6'b100_111: op <= 4'b1100; //nor
                 default: 
-                op <= 4'bzzzz;
+                op <= 4'bxxxx;
             endcase
         end
     end
